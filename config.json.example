@@ -1,21 +1,21 @@
 {
-    // Remove all comments from the config when using it!
+    
 
     "port": 80,
     "globalSalt": "[global salt (pepper) that is added to every ip before hashing to make it even harder for someone to decode the ip]",
     "adminUserID": "[the hashed id of the user who can perform admin actions]",
     "newLeafURLs": ["http://localhost:3241"],
-    "discordReportChannelWebhookURL": null, //URL from discord if you would like notifications when someone makes a report [optional]
-    "discordFirstTimeSubmissionsWebhookURL": null, //URL from discord if you would like notifications when someone makes a first time submission [optional]
-    "discordCompletelyIncorrectReportWebhookURL": null, //URL from discord if you would like notifications when someone reports a submission as completely incorrect [optional]
-    "neuralBlockURL": null, // URL to check submissions against neural block. Ex. https://ai.neuralblock.app
-    "discordNeuralBlockRejectWebhookURL": null, //URL from discord if you would like notifications when NeuralBlock rejects a submission [optional]
-    "userCounterURL": null, // For user counting. URL to instance of https://github.com/ajayyy/PrivacyUserCount
-    "proxySubmission": null, // Base url to proxy submissions to persist // e.g. https://sponsor.ajay.app (no trailing slash)
-    "behindProxy": "X-Forwarded-For", //Options: "X-Forwarded-For", "Cloudflare", "X-Real-IP", anything else will mean it is not behind a proxy. True defaults to "X-Forwarded-For"
+    "discordReportChannelWebhookURL": null, 
+    "discordFirstTimeSubmissionsWebhookURL": null, 
+    "discordCompletelyIncorrectReportWebhookURL": null, 
+    "neuralBlockURL": null, 
+    "discordNeuralBlockRejectWebhookURL": null, 
+    "userCounterURL": null, 
+    "proxySubmission": null, 
+    "behindProxy": "X-Forwarded-For", 
     "db": "./databases/sponsorTimes.db",
     "privateDB": "./databases/private.db",
-    "createDatabaseIfNotExist": true, //This will run on startup every time (unless readOnly is true) - so ensure "create table if not exists" is used in the schema
+    "createDatabaseIfNotExist": true, 
     "schemaFolder": "./databases",
     "dbSchema": "./databases/_sponsorTimes.db.sql",
     "privateDBSchema": "./databases/_private.db.sql",
@@ -23,27 +23,27 @@
     "mode": "development",
     "readOnly": false,
     "webhooks": [],
-    "categoryList": ["sponsor", "intro", "outro", "interaction", "selfpromo", "preview", "music_offtopic", "poi_highlight"], // List of supported categories any other category will be rejected
-    "getTopUsersCacheTimeMinutes": 5, // cacheTime for getTopUsers result in minutes
-    "maxNumberOfActiveWarnings": 3, // Users with this number of warnings will be blocked until warnings expire
+    "categoryList": ["sponsor", "intro", "outro", "interaction", "selfpromo", "preview", "music_offtopic", "poi_highlight", "advertising"], 
+    "getTopUsersCacheTimeMinutes": 5, 
+    "maxNumberOfActiveWarnings": 3, 
     "hoursAfterWarningExpire": 24,
     "rateLimit": {
       "vote": {
-        "windowMs": 900000, // 15 minutes
-        "max": 20, // 20 requests in 15min time window
+        "windowMs": 900000, 
+        "max": 20, 
         "message": "Too many votes, please try again later",
         "statusCode": 429
       },
       "view": {
-        "windowMs": 900000, // 15 minutes
-        "max": 20, // 20 requests in 15min time window
+        "windowMs": 900000, 
+        "max": 20, 
         "statusCode": 200
       }
     },
-    "maxRewardTimePerSegmentInSeconds": 86400, // maximum time a user get rewarded in the leaderboard for a single segment
+    "maxRewardTimePerSegmentInSeconds": 86400, 
     "dumpDatabase": {
         "enabled": true,
-        "minTimeBetweenMs": 60000, // 1 minute between dumps
+        "minTimeBetweenMs": 60000, 
         "appExportPath": "./docker/database-export",
         "postgresExportPath": "/opt/exports",
         "tables": [{
@@ -67,5 +67,5 @@
             "name": "vipUsers"
         }]
     },
-    "minUserIDLength": 30 // minimum length of UserID to be accepted
+    "minUserIDLength": 30 
 }
